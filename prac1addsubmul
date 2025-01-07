@@ -1,0 +1,99 @@
+a = c('a','b','c')#for creating vectors with same data type
+a
+a = c('d',a)#adding values in vector
+a
+b = seq(from = 1, to = 10 , by = 0.5)#creating seq of number
+b
+a
+a = c(NA, a)#checking missing values
+a
+is.na(a)#check one by one
+anyNA(a)#check if yes or no
+
+#Coercion
+val1 = c("hello",TRUE,2L , 5.5)#converts diff types in to char
+val1
+class(val1)#output  char
+
+typeof(val1)
+#Matrix 
+mat1 = matrix(nrow = 2 , ncol = 2)#empty mat with NA values
+mat1
+cname = c("col1","col2")
+rname = c("row1","row2")
+mat2 = matrix(c(2,4,6,8), ncol = 2 , nrow =2, dimnames = list(rname,cname))
+mat3 = matrix(c(3,6,9,12), ncol = 2 , nrow =2 , 
+              byrow= T)
+#by row is used to assign values in row wise(-) not (|)
+mat2
+mat2+mat3   #adding 2 matrix
+mat3[2,1]#for accessing the elements in matrix
+result_cbind = cbind(mat2,mat3)
+result_cbind
+
+x = 1:3
+y = 2:4
+cbind(x,y)#bind col wise
+rbind(x,y)#bind row wise
+
+x = 1:10
+mat2[1]
+mat2[[1]]
+#list
+mylist = list(name = "alice", age = 19, gender ="Male")
+as.list(mylist)
+data("mtcars")
+data = head(mtcars)
+data
+
+#creating list which contain list, mat, numbers
+mylist2 = list(c(1,2,3), matrix(1:3 ,nrow = 2),list(2,3,4))
+mylist2
+#assigning names to the elements in the list
+names(mylist2) = c("numbers", "mat","list")
+mylist2
+
+#remove elements from list
+mylist[2] = NULL
+mylist
+#updating elements list in
+mylist[1] = "John marston"
+mylist
+#converting list usng un list
+list1 = list(1:10)
+list2 = list(11:20)
+v1= unlist(list1)
+v2 = unlist(list2)
+#factors
+d1 = c("East","West","East","North","North")
+print(is.factor(d1))
+dfactor = as.factor(d1)
+is.factor(dfactor)
+dfactor
+# Create the data frame.
+height <- c(132,151,162,139,166,147,122)
+weight <- c(48,49,66,53,67,52,40)
+gender <- c("male","male","female","female","male","female","male")
+data_info =data.frame(height,weight,gender)
+is.factor(data_info$gender)
+data_info$gender
+#changing the order of level
+aa = factor(gender)
+datafactor = factor(aa, levels = c("male", "female"))
+datafactor
+
+
+v <- gl(3, 4, labels = c("Tampa", "Seattle","Boston"))
+print(v)
+#for dataframe ex mtcars
+str(data)
+summary(data)
+data[1,2]
+
+
+
+
+
+
+
+
